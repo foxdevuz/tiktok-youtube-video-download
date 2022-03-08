@@ -1,14 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  height: 100vh;
-  width: 100%;
-  background-color: #010409;
+  background-color: #0b0b31;
+  color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 form {
@@ -16,98 +20,67 @@ form {
   top: 10%;
   left: 50%;
   transform: translate(-50%, -10%);
-  font-size: 1.2rem;
-  font-weight: 400;
-  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+  margin: auto;
 }
 form input {
-  outline: none;
-  background-color: #161B22;
-  padding: 9px 18px;
-  border-radius: 8px;
+  padding: 8px 16px;
   border: none;
-  color: #fdfdf2;
+  border-radius: 8px;
+  background-color: #24292F;
+  color: #e2e2e2;
+  outline: none;
 }
 form input:focus::placeholder {
-  color: #fdfdf2;
+  color: #f2f2f2;
 }
 form button {
-  background-color: #f0f6fc;
-  color: #0D1117;
-  padding: 3px 12px;
+  background-color: #e2e2e2;
+  color: #24292F;
+  padding: 2px 6px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.5s;
 }
 
 .modal {
-  width: 700px;
-  height: 450px;
-  border-radius: 10px;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 25px;
+  border-radius: 8px;
 }
-.modal .video {
-  width: 80%;
-  max-height: 400px;
-  margin: auto;
-  display: block;
-  margin-top: 10px;
-  border-radius: 5px;
+
+.video {
+  margin-bottom: 10px;
+  max-width: 500px;
+  max-height: 200px;
 }
-.modal .downloadBtn {
-  background-color: #fdfdf2;
-  color: #161B22;
-  padding: 5px 10px;
-  border-radius: 5px;
+
+.downloadBtn {
+  background-color: #F6F8FA;
+  color: #24292F;
+  padding: 8px 16px;
+  border-radius: 8px;
   text-decoration: none;
-  position: absolute;
-  top: 79%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  text-align: center;
+  transition: all 0.5s;
+  font-weight: 500;
 }
 
-@media only screen and (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-
-  form button {
-    margin-top: 10px;
-  }
-
-  .modal {
-    width: 100%;
-    height: 100vh;
-  }
+.downloadBtn:hover {
+  color: #e2e2e2;
+  background-color: #24292F;
 }
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 13px;
-  }
 
-  .modal {
-    width: 100%;
-    height: 100vh;
-  }
-  .modal button {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -60%);
-  }
-}
 .modalShow {
-  display: block !important;
+  visibility: visible;
 }
 
 /*# sourceMappingURL=style.css.map */

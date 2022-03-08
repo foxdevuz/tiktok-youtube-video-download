@@ -1,124 +1,87 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body {
-    height: 100vh;
-    width: 100%;
-    background-color: #010409;
-}
-// Google fonts
+// Google fonts POPPINS
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-// Variable 
-$dark: #010409;
-$po: "Poppins", sans-serif;
-// Form Style
+// General 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #0b0b31;
+    color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+// Form
 form {
     position: absolute;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
-    font: {
-        size:1.2rem;
-        weight: 400;
-        family:$po;
-    }
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    margin: auto;
     input {
-        outline: none;
-        background-color: #161B22;
-        padding: 9px 18px;
-        border-radius: 8px;
+        padding: 8px 16px;
         border: none;
-        color: #fdfdf2;
+        border-radius: 8px;
+        background-color: #24292F;
+        color: #e2e2e2;
+        outline: none;
     }
     input:focus::placeholder {
-        color: #fdfdf2;
+        color: #f2f2f2;
     }
     button {
-        background-color: rgb(240,246,252);
-        color: #0D1117;
-        padding: 3px 12px;
+        background-color: #e2e2e2;
+        color: #24292F;
+        padding: 2px 6px;
         border: none;
         border-radius: 8px;
         cursor: pointer;
         font: {
-            size: 1rem;
-            weight:500;
-            family:$po;
+            size: 0.9rem;
+            weight: 600;
         }
-    }
-}
-//  Modal style
-.modal {
-    width: 700px;
-    height: 450px;
-    // background-color: #F0F6FC;
-    border-radius: 10px;
-    position: absolute;
-    top:70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    .video {
-        // border: 2px solid red;
-        width: 80%;
-        max-height: 400px;
-        margin: auto;
-        display: block;
-        margin-top: 10px;
-        border-radius: 5px;
-    }
-    .downloadBtn {
-        background-color: #fdfdf2;
-        color: #161B22;
-        padding: 5px 10px;
-        border-radius: 5px;
-        text-decoration: none;
-        position: absolute;
-        top: 79%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font: {
-            size: 1rem;
-            family: $po;
-            weight: 300;
-        }
-    }
-}
-// RWD
-@media only screen and (max-width:768px){
-    html {
-        font-size: 14px;
-    }
-    form {
-        button {
-            margin-top: 10px;
-        }
-    }
-    .modal {
-        width: 100%;
-        height: 100vh;
+        transition: all 0.5s;
     }
 
 }
-@media only screen and (max-width:480px){
-    html {
-        font-size: 13px;
-    }
-    .modal {
-        width: 100%;
-        height: 100vh;
-        button {
-            position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translate(-50%, -60%);
-        }
-    }
-    
+.modal {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 25px;
+    border-radius: 8px;
 }
-// Class for JS
+.video {
+    margin-bottom: 10px;
+    max-width: 500px;
+    max-height: 200px;
+}
+.downloadBtn {
+    background-color: #F6F8FA;
+    color: #24292F;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.5s;
+    font: {
+        weight: 500;
+    }
+}
+.downloadBtn:hover {
+    color: #e2e2e2;
+    background-color: #24292F;
+
+}
 .modalShow {
-    display: block !important;
+    visibility: visible;
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <div class="backDrop"></div>
     <form>
         <input type="text" id="inp" placeholder="Enter link..." required>
         <button id="btn" title="Check your link" type="submit">Check</button>
@@ -17,6 +18,7 @@
         <img src="" alt="" id="img">
         <a href="" class="downloadBtn" download target="_blanc">Download</a>
     </div>
+
     <!-- My JS -->
     <script>
         // variable
@@ -26,14 +28,14 @@
         let vid = document.querySelector(".video");
         let img = document.querySelector("#img");
         let download = document.querySelector(".downloadBtn")
-        let ModalClose = document.getElementById("downloadBtn")
         //Working with APIs
-        console.log("MOL")
+        console.log("MO")
        button.addEventListener("click", ()=> {
             event.preventDefault()
             console.log(11);
             // Tik Tok
             if (input.value.includes("tiktok")) {
+                console.log("tt");
                 modal.classList.add("modalShow")
                 let xrh = new XMLHttpRequest();
                 xrh.open("GET", "./tiktok.php?url="+ input.value , true)
@@ -44,7 +46,7 @@
                     vid.src = respTextParse.result.download
                     download.href = respTextParse.result.download
                 }
-                xrh.send()
+                xrh.send()    
             } 
             //  YouTube
             else if (input.value.includes("youtu.be")) {
@@ -70,7 +72,7 @@
                 xrh.onload = ()=> {
                     let respTextParse = JSON.parse(xrh.responseText);
                     console.log(respTextParse);
-                    vid.src = input.value
+                    vid.src = respTextParse.url
                 }
                 xrh.send()
             }
